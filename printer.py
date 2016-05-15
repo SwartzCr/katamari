@@ -30,29 +30,37 @@ def banner():
 
 def prompt(actions):
     acts = ", ".join(actions)
-    print "I'm sorry I didn't understand that, valid actions are: {0}".format(acts)
+    print("I'm sorry I didn't understand that, valid actions are: {0}".format(acts))
 
 def pickup(item):
-    print "Nice! You now have a {0} stuck to your katamari!".format(item)
+    print("Nice! You now have a {0} stuck to your katamari!".format(item))
 
 def fail(item):
-    print "You slam your katamari into the {0} and bounce right back off losing some items! Oh no!".format(item)
+    print("You slam your katamari into the {0} and bounce right back off losing some items! Oh no!".format(item))
 
 def royal_rainbow():
-    print "ROYAL RAINBOW"
+    """Royal Rainbow"""
+    banner_file = os.getcwd() + '/royal_rainbow.dat'
+    with open(banner_file, 'r') as b:
+        for l in b:
+            print(l.format(PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors), end='')
+        print('\n')
 
 def bid_adieu():
-    print "sorry to see you go, play again soon!"
+    print("sorry to see you go, play again soon!")
 
 def welcome():
     banner()
-    print "Na na nanana na na Katamari Damacy!"
+    print("Na na nanana na na Katamari Damacy!")
 
 def move(direction):
-    print "You push hard and roll your katamari {0}".format(direction)
+    print("You push hard and roll your katamari {0}".format(direction))
 
 def status(size):
-    print "Your katamari is {0}cm".format(str(size))
+    print("Your katamari is {0}cm".format(str(size)))
 
 def lose(item):
-    print "Oh No! A {0} flies off of your katamari!".format(item)
+    print("Oh No! A {0} flies off of your katamari!".format(item))
+
+def welcome_level(level):
+    print("Welcome to {0}! You have {1} minutes to get your katamari from {2}cm to {3}cm, better hurry!".format(level["name"], level["time"]/60, level["katamari"], level["goal"]))

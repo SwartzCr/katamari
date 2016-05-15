@@ -29,15 +29,22 @@ def load_game():
         data = json.load(f)
     return data
 
+def load_level(level):
+    file_name = level + ".json"
+    with open(file_name, 'r') as f:
+        out = json.load(f)
+    return out
+
 def try_level(data):
-    levels = [level for level in data["levels"] if level["status"] is "beaten"
-                                                 or level["number"] is data["progress"]]
+    levels = [level for level in data["levels"] if level["number"] <= data["progress"]]
     names = [level["name"] for level in levels]
     print "available levels are: {0}".format(", ".join(names))
     inp = input("which level would you like to play? ").lower()
     if inp in names:
         level = [level for level in levels if level["name"] == inp][0]
-        data["level"] = level
+        data["level"] = load_level(inp)
+        print "Transporting you to {0}".format(inp)
+        printer.royal_rainbow()
         play.play_level(level, data)
     else:
         print "I'm sorry that's not an available level"
@@ -70,5 +77,6 @@ def main():
             printer.prompt(actions.keys())
 
 
-
+if __name__ == "__main__":
+    main()
 
