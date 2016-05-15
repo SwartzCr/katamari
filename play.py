@@ -11,22 +11,23 @@ def play_level(level, data):
                         "items": []}
     data["playing_level"] = True
     data["level"] = level
+    actions = {"north": north,
+               "south": south,
+               "east": east,
+               "west": west,
+               "look": look,
+               "roll up": roll,
+               "quit": quit}
+    alt_actions = {"n": north,
+                   "s": south,
+                   "e": east,
+                   "w": west,
+                   "roll": roll,
+                   "r": roll,
+                   "l": look,
+                   "examine": look}
+    printer.welcome_level(level)
     while data["playing_level"]:
-        actions = {"north": north,
-                   "south": south,
-                   "east": east,
-                   "west": west,
-                   "look": look,
-                   "roll up": roll,
-                   "quit": quit}
-        alt_actions = {"n": north,
-                       "s": south,
-                       "e": east,
-                       "w": west,
-                       "roll": roll,
-                       "r": roll,
-                       "l": look,
-                       "examine": look}
         inp = input("> ").lower()
         if inp in actions.keys():
             actions[inp](data)
@@ -73,9 +74,10 @@ def roll(data):
 
 def recalc_katamari(data):
     katamari = data["katamari"]
-    sizes = [item["size"] for item in katamari["items"]]
-    avg_size = sum(sizes) / float(len(sizes)+1)
-    size = data["level"]["katamari"] + sum([(size/avg_size+1) for size in sizes])
+    sizes = [(4.19 * (item["size"]/2.0)**3) for item in katamari["items"]]
+    sizes.append((4.19 * (data["level"]["katamari"]/2.0) ** 3))
+    volume = sum(sizes)
+    size = (volume / 2.36) ** (1.0/3.0)
     printer.status(size)
 
 def smash_katamari(data):

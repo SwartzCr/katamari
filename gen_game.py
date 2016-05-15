@@ -1,18 +1,5 @@
 import json
-
-test_level = {"dimensions": (6, 6),
-              "items": [{"name": "banana",
-                         "size": 10,
-                         "location": (2,2)},
-                        {"name": "eraser",
-                         "size": 3,
-                         "location": (4,4)}],
-              "name": "test_level",
-              "number": 0,
-              "status": "unbeaten",
-              "location": (3,3),
-              "goal": 15,
-              "katamari": 10}
+import levels
 
 def write_level(level, level_name):
     file_name = level_name + ".json"
@@ -31,10 +18,9 @@ def construct_level(level):
         for i in range(dimensions[0]):
             row.append([])
         grid.append(row)
-    for item in level["items"]:
-        loc = item["location"]
-        grid[loc[0]][loc[1]].append({"name": item["name"],
-                                     "size": item["size"]})
+    for item_tup in level["items"]:
+        item, loc = item_tup
+        grid[loc[0]][loc[1]].append(item)
     level["grid"] = grid
     write_level(level, level["name"])
     return level
@@ -43,9 +29,9 @@ def create_data():
     data = {"playing": False,
             "playing_level": False,
             "level": {},
-            "progress": 0,
+            "progress": 1,
             "katamari": {},
-            "levels": [test_level]}
-    for idx, level in enumerate(data["levels"]):
-        data["levels"][idx] = construct_level(level)
+            "levels": []}
+    for level in levels.levels:
+        data["levels"].append(construct_level(level))
     save_game(data)
