@@ -39,17 +39,37 @@ def play_level(level, data):
             printer.prompt(actions.keys())
 
 def quit(data):
+    check_win(data)
     print "exiting level"
     printer.royal_rainbow()
     data["playing_level"] = False
     data["level"] = {}
     data["katamari"] = {}
 
+def tick_time(data):
+    data["level"]["time"] -= 1
+    if data["level"]["time"] == 60:
+        printer.minute_warning()
+    elif data["level"]["time"] == 0:
+        printer.times_up()
+        quit(data)
+
+def check_win(data):
+    size = recalc_katamari(data)
+    printer.final_size(size)
+    if size > data["level"]["goal"]:
+        printer.win()
+        if data["progress"] == data["level"]["number"]:
+            data["progress"] += 1
+    else:
+        printer.failure()
+
 def move_to(place, data):
     katamari = data["katamari"]
     if in_bounds(place, data):
         data["level"]["location"] = place
         look_at((0, 0), data)
+        tick_time(data)
     else:
         print "Ahh but you can't move there! Sorry, that's not in bounds"
 
@@ -61,34 +81,35 @@ def roll(data):
     targets = [item for item in items if item["name"].lower() == to_roll]
     if len(targets) > 0:
         item = targets[0]
-        if item["size"] <= data["katamari"]["size"] / 2.0:
+        if item["size"] <= recalc_katamari(data) / 2.0:
             items.remove(item)
             data["katamari"]["items"].append(item)
             printer.pickup(item["name"])
-            recalc_katamari(data)
+            printer.status(recalc_katamari(data))
         else:
             printer.fail(item["name"])
             smash_katamari(data)
+        tick_time(data)
     else:
         print "I'm sorry, I don't see that item here"
 
 def recalc_katamari(data):
     katamari = data["katamari"]
     sizes = [(4.19 * (item["size"]/2.0)**3) for item in katamari["items"]]
-    sizes.append((4.19 * (data["level"]["katamari"]/2.0) ** 3))
+    sizes.append((4.1887 * (data["level"]["katamari"]/2.0) ** 3))
     volume = sum(sizes)
-    size = (volume / 2.36) ** (1.0/3.0)
-    printer.status(size)
+    size = ((volume / 4.1887) ** (1.0/3.0))*2
+    return size
 
 def smash_katamari(data):
     katamari = data["katamari"]
-    for i in range(random.randint(1,3)):
+    for i in range(random.randint(0,min(3, len(katamari["items"])))):
         item = random.choice(katamari["items"])
         printer.lose(item["name"])
         katamari["items"].remove(item)
         loc = data["level"]["location"]
         data["level"]["grid"][loc[1]][loc[0]].append(item)
-    recalc_katamari(data)
+    printer.status(recalc_katamari(data))
 
 def north(data):
     printer.move("north")
@@ -117,7 +138,7 @@ def west(data):
 def desc_katamari(data):
     katamari = data["katamari"]
     print "What a beautiful katamari!"
-    print "Your katamari is {0}cm".format(katamari["size"])
+    print "Your katamari is {0}cm".format(str(recalc_katamari(data)))
     if len(katamari["items"]):
         print "Your katamari is made up of {0}".format(", ".join([item["name"] for item in katamari["items"]]))
     else:

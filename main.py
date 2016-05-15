@@ -50,7 +50,7 @@ def try_level(data):
         print "I'm sorry that's not an available level"
 
 def progress(data):
-    pass
+    print "You're on level {0}, keep going! You can do it!".format(data["progress"])
 
 def save(data):
     gen_game.save_game(data)
@@ -68,6 +68,7 @@ def main():
                "progress": progress,
                "save": save,
                "quit": quit}
+    print "Time to start playing, what would you like to do? Valid commands are {0}".format(", ".join(actions.keys()))
     while data["playing"]:
         inp = input("> ").lower()
         if inp in actions.keys():

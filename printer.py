@@ -40,7 +40,7 @@ def fail(item):
 
 def royal_rainbow():
     """Royal Rainbow."""
-    banner_file = os.getcwd() + '/royal_rainbow.dat'
+    rainbow_file = os.getcwd() + '/royal_rainbow.dat'
     with open(rainbow_file, 'r') as r:
         for l in r:
             print(l.format(PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors), end='')
@@ -64,3 +64,18 @@ def lose(item):
 
 def welcome_level(level):
     print("Welcome to {0}! You have {1} minutes to get your katamari from {2}cm to {3}cm, better hurry!".format(level["name"], level["time"]/60, level["katamari"], level["goal"]))
+
+def minute_warning():
+    print("Only one minute left! Better hurry!")
+
+def times_up():
+    print("That's all the time you have, time to see how you did")
+
+def win():
+    print("My what a beautiful katamari! I am very pleased with you")
+
+def failure():
+    print("NOT BIG ENOUGH! I AM VERY DISAPPOINTED")
+
+def final_size(size):
+    print("Your final katamari size is {0}cm".format(str(size)))
