@@ -1,3 +1,32 @@
+from __future__ import print_function
+import os
+
+class PColors:
+    """Define some colors up in this piece."""
+
+    RED = '\033[31m'
+    YELLOW = '\033[33m'
+    GREEN = '\033[32m'
+    BLUE = '\033[34m'
+    PURPLE = '\033[35m'
+    ENDC = '\033[0m'
+
+    def disable(self):
+        """Disable colorization and revert to plain text."""
+        self.RED = ''
+        self.YELLOW = ''
+        self.GREEN = ''
+        self.BLUE = ''
+        self.PURPLE = ''
+        self.ENDC = ''
+
+def banner():
+    """Welcome banner."""
+    banner_file = os.getcwd() + '/banner.dat'
+    with open(banner_file, 'r') as b:
+        for l in b:
+            print(l.format(PColors, PColors), end='')
+        print('\n')
 
 def prompt(actions):
     acts = ", ".join(actions)
@@ -16,6 +45,7 @@ def bid_adieu():
     print "sorry to see you go, play again soon!"
 
 def welcome():
+    banner()
     print "Na na nanana na na Katamari Damacy!"
 
 def move(direction):
