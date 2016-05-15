@@ -39,7 +39,13 @@ def fail(item):
     print "You slam your katamari into the {0} and bounce right back off losing some items! Oh no!".format(item)
 
 def royal_rainbow():
-    print "{.RED}R{.ENDC}{.RED}O{.ENDC}{.YELLOW}Y{.ENDC}{.YELLOW}A{.ENDC}{.GREEN}L{.ENDC} {.GREEN}R{.ENDC}{.GREEN}A{.ENDC}{.BLUE}I{.ENDC}{.BLUE}N{.ENDC}{.PURPLE}B{.ENDC}{.PURPLE}O{.ENDC}{.PURPLE}W{.ENDC}".format(PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors)
+    """Royal Rainbow."""
+    banner_file = os.getcwd() + '/royal_rainbow.dat'
+    with open(rainbow_file, 'r') as r:
+        for l in r:
+            print(l.format(PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors, PColors), end='')
+        print('\n')
+  
 
 def bid_adieu():
     print "sorry to see you go, play again soon!"
