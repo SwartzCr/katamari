@@ -7,4 +7,4 @@ To play simply clone the directory and run `python main.py`
 # Contribute!
 There are a bunch of issues open - feel free to submit PRs
 
-![](https://raw.githubusercontent.com/SwartzCr/katamari/master/share/katamaritext.jpg)
+![](https://raw.githubusercontent.com/SwartzCr/katamari/master/share/readme.jpg)
