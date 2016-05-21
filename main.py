@@ -70,12 +70,15 @@ def main():
                "quit": quit}
     print "Time to start playing, what would you like to do? Valid commands are {0}".format(", ".join(actions.keys()))
     while data["playing"]:
-        inp = input("> ").lower()
-        if inp in actions.keys():
-            actions[inp](data)
-            continue
-        else:
-            printer.prompt(actions.keys())
+        try:
+            inp = input("> ").lower()
+            if inp in actions.keys():
+                actions[inp](data)
+                continue
+            else:
+                printer.prompt(actions.keys())
+        except EOFError:
+            quit(data)
 
 
 if __name__ == "__main__":
