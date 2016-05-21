@@ -182,7 +182,8 @@ def look(data):
                    "west": (-1, 0),
                    "h": (0, 0)}
     katamari = {"katamari" : ""}
-    inp = input("look which direction? (N, S, E, W, Here, or Katamari) ").lower()
+    prompt = "N, S, E, W, Here, or Katamari"
+    inp = input("look which direction? ({0}) ".format(prompt)).lower()
     if inp in options.keys():
         look_at(options[inp], data)
     elif inp in alt_options.keys():
@@ -190,7 +191,7 @@ def look(data):
     elif inp in katamari.keys():
         desc_katamari(data)
     else:
-        print "Please choose a valid option, options are {0} or {1}".format(", ".join(options.keys()), "katamari")
+        print "Please choose a valid option, options are {0}".format(prompt)
 
 def look_at(transform, data):
     loc = data["level"]["location"]
