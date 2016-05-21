@@ -146,6 +146,7 @@ def desc_katamari(data):
     goal = data["level"]["goal"]
     if katamari["size"] < goal:
         print "Your katamari needs to be {0}cm before the end of the round, better hurry!".format(goal)
+        print "Move with N, S, E, W, and use Roll Up to add items to your Katamari"
 
 def look(data):
     options = {"n": (0, -1),
