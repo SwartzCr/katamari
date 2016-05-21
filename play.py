@@ -46,7 +46,7 @@ def play_level(level, data):
 
 def quit(data):
     announce_win(data)
-    print "exiting level"
+    print("exiting level")
     printer.royal_rainbow()
     data["playing_level"] = False
     data["level"] = {}
@@ -85,15 +85,15 @@ def move_to(place, data):
         look_at((0, 0), data)
         tick_time(data)
     else:
-        print "Ahh but you can't move there! Sorry, that's not in bounds"
+        print("Ahh but you can't move there! Sorry, that's not in bounds")
 
 def time(data):
     time_left = data["level"]["time"]
     goal = data["level"]["goal"]
     if check_win(data):
-        print "You're over your goal of {0}cm, phew! But you still have {1}m{2}s to make your Katamari as big as possible! Get to it!".format(goal, time_left/60, time_left%60)
+        print("You're over your goal of {0}cm, phew! But you still have {1}m{2}s to make your Katamari as big as possible! Get to it!".format(goal, time_left/60, time_left%60))
     else:
-        print "You have {0}m{1}s left to get your katamari up to {2}cm, better hurry!".format(time_left/60, time_left%60, goal)
+        print("You have {0}m{1}s left to get your katamari up to {2}cm, better hurry!".format(time_left/60, time_left%60, goal))
 
 def roll(data):
     place = data["level"]["location"]
@@ -113,7 +113,7 @@ def roll(data):
             smash_katamari(data)
         tick_time(data)
     else:
-        print "I'm sorry, I don't see that item here"
+        print("I'm sorry, I don't see that item here")
 
 def recalc_katamari(data):
     katamari = data["katamari"]
@@ -159,16 +159,16 @@ def west(data):
 
 def desc_katamari(data):
     katamari = data["katamari"]
-    print "What a beautiful katamari!"
-    print "Your katamari is {0}cm".format(str(recalc_katamari(data)))
+    print("What a beautiful katamari!")
+    print("Your katamari is {0}cm".format(str(recalc_katamari(data))))
     if len(katamari["items"]):
-        print "Your katamari is made up of {0}".format(", ".join([item["name"] for item in katamari["items"]]))
+        print("Your katamari is made up of {0}".format(", ".join([item["name"] for item in katamari["items"]])))
     else:
-        print "Your katamari is totally empty! It's a blank slate!"
+        print("Your katamari is totally empty! It's a blank slate!")
     goal = data["level"]["goal"]
     if katamari["size"] < goal:
-        print "Your katamari needs to be {0}cm before the end of the round, better hurry!".format(goal)
-        print "Move with N, S, E, W, and use Roll Up to add items to your Katamari"
+        print("Your katamari needs to be {0}cm before the end of the round, better hurry!".format(goal))
+        print("Move with N, S, E, W, and use Roll Up to add items to your Katamari")
 
 def look(data):
     options = {"n": (0, -1),
@@ -191,7 +191,7 @@ def look(data):
     elif inp in katamari.keys():
         desc_katamari(data)
     else:
-        print "Please choose a valid option, options are {0}".format(prompt)
+        print("Please choose a valid option, options are {0}".format(prompt))
 
 def look_at(transform, data):
     loc = data["level"]["location"]
@@ -199,11 +199,11 @@ def look_at(transform, data):
     if in_bounds(place, data):
         space = data["level"]["grid"][place[1]][place[0]]
         if transform == (0, 0):
-            print "You're standing firmly on the ground, with {0} items around you".format(str(len(space)))
+            print("You're standing firmly on the ground, with {0} items around you".format(str(len(space))))
         else:
-            print "When you look that direction you see {0} items".format(str(len(space)))
+            print("When you look that direction you see {0} items".format(str(len(space))))
         for item in space:
-            print "You see a {0}".format(item["name"])
+            print("You see a {0}".format(item["name"]))
 
 def in_bounds(place, data):
     if 0 <= place[0] < data["level"]["dimensions"][0] and 0 <= place[1] < data["level"]["dimensions"][1]:

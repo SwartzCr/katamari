@@ -38,19 +38,19 @@ def load_level(level):
 def try_level(data):
     levels = [level for level in data["levels"] if level["number"] <= data["progress"]]
     names = [level["name"] for level in levels]
-    print "available levels are: {0}".format(", ".join(names))
+    print("available levels are: {0}".format(", ".join(names)))
     inp = input("which level would you like to play? ").lower()
     if inp in names:
         level = [level for level in levels if level["name"] == inp][0]
         data["level"] = load_level(inp)
-        print "Transporting you to {0}".format(inp)
+        print("Transporting you to {0}".format(inp))
         printer.royal_rainbow()
         play.play_level(level, data)
     else:
-        print "I'm sorry that's not an available level"
+        print("I'm sorry that's not an available level")
 
 def progress(data):
-    print "You're on level {0}, keep going! You can do it!".format(data["progress"])
+    print("You're on level {0}, keep going! You can do it!".format(data["progress"]))
 
 def save(data):
     gen_game.save_game(data)
@@ -68,7 +68,7 @@ def main():
                "progress": progress,
                "save": save,
                "quit": quit}
-    print "Time to start playing, what would you like to do? Valid commands are {0}".format(", ".join(actions.keys()))
+    print("Time to start playing, what would you like to do? Valid commands are {0}".format(", ".join(actions.keys())))
     while data["playing"]:
         try:
             inp = input("> ").lower()
