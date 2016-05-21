@@ -4,11 +4,11 @@ import levels
 def write_level(level, level_name):
     file_name = level_name + ".json"
     with open(file_name, 'w') as f:
-        json.dump(level, f)
+        json.dump(level, f, sort_keys=True, indent=2)
 
 def save_game(data):
     with open("data.json", 'w') as f:
-        json.dump(data, f)
+        json.dump(data, f, sort_keys=True, indent=2)
 
 def construct_level(level):
     grid = []

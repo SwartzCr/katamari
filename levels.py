@@ -11,7 +11,7 @@ strawberry = {"name": "strawberry",
               "description": "Don't try to eat the whole thing in one bite!"}
 wcrayon = {"name": "white crayon",
           "size": 5.9,
-          "description": "A white crayon. Using this on white papar is pointless"}
+          "description": "A white crayon. Using this on white paper is pointless"}
 bcrayon = {"name": "black crayon",
            "size": 3.7,
            "description": "A black crayon. Good for drawing the night sky."}

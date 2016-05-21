@@ -1,1 +1,382 @@
-{"status": "unbeaten", "items": [[{"description": "You don't need to be a monkey to eat this.", "name": "banana", "size": 10.0}, [2, 2]], [{"description": "Some people are so skilful that they can build a small house with this.", "name": "match", "size": 1.6}, [3, 3]], [{"description": "Some people are so skilful that they can build a small house with this.", "name": "match", "size": 1.6}, [3, 3]], [{"description": "Some people are so skilful that they can build a small house with this.", "name": "match", "size": 1.6}, [3, 3]], [{"description": "People believe this will bring them good luck.", "name": "5yen coin", "size": 2.8}, [2, 2]], [{"description": "People believe this will bring them good luck.", "name": "5yen coin", "size": 2.8}, [2, 1]], [{"description": "People believe this will bring them good luck.", "name": "5yen coin", "size": 2.8}, [2, 0]], [{"description": "People believe this will bring them good luck.", "name": "5yen coin", "size": 2.8}, [1, 2]], [{"description": "A white crayon. Using this on white papar is pointless", "name": "white crayon", "size": 5.9}, [3, 4]], [{"description": "A red crayon. This is not lipstick. Girls, be careful.", "name": "red crayon", "size": 4.2}, [4, 4]], [{"description": "A red crayon. This is not lipstick. Girls, be careful.", "name": "red crayon", "size": 4.2}, [4, 4]], [{"description": "A red crayon. This is not lipstick. Girls, be careful.", "name": "red crayon", "size": 4.2}, [4, 3]], [{"description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", "name": "hairpin", "size": 4.5}, [1, 1]], [{"description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", "name": "hairpin", "size": 4.5}, [1, 2]], [{"description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", "name": "hairpin", "size": 4.5}, [1, 3]], [{"description": "These usually disappear very quickly when playing Pachinko...", "name": "pachinko ball", "size": 4.7}, [3, 3]], [{"description": "These usually disappear very quickly when playing Pachinko...", "name": "pachinko ball", "size": 4.7}, [3, 3]], [{"description": "These usually disappear very quickly when playing Pachinko...", "name": "pachinko ball", "size": 4.7}, [3, 3]], [{"description": "Rub and erase. But it makes a mess.", "name": "eraser", "size": 8.0}, [3, 3]]], "grid": [[[], [], [], [], [], []], [[], [{"description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", "name": "hairpin", "size": 4.5}], [{"description": "People believe this will bring them good luck.", "name": "5yen coin", "size": 2.8}, {"description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", "name": "hairpin", "size": 4.5}], [{"description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", "name": "hairpin", "size": 4.5}], [], []], [[{"description": "People believe this will bring them good luck.", "name": "5yen coin", "size": 2.8}], [{"description": "People believe this will bring them good luck.", "name": "5yen coin", "size": 2.8}], [{"description": "You don't need to be a monkey to eat this.", "name": "banana", "size": 10.0}, {"description": "People believe this will bring them good luck.", "name": "5yen coin", "size": 2.8}], [], [], []], [[], [], [], [{"description": "Some people are so skilful that they can build a small house with this.", "name": "match", "size": 1.6}, {"description": "Some people are so skilful that they can build a small house with this.", "name": "match", "size": 1.6}, {"description": "Some people are so skilful that they can build a small house with this.", "name": "match", "size": 1.6}, {"description": "These usually disappear very quickly when playing Pachinko...", "name": "pachinko ball", "size": 4.7}, {"description": "These usually disappear very quickly when playing Pachinko...", "name": "pachinko ball", "size": 4.7}, {"description": "These usually disappear very quickly when playing Pachinko...", "name": "pachinko ball", "size": 4.7}, {"description": "Rub and erase. But it makes a mess.", "name": "eraser", "size": 8.0}], [{"description": "A white crayon. Using this on white papar is pointless", "name": "white crayon", "size": 5.9}], []], [[], [], [], [{"description": "A red crayon. This is not lipstick. Girls, be careful.", "name": "red crayon", "size": 4.2}], [{"description": "A red crayon. This is not lipstick. Girls, be careful.", "name": "red crayon", "size": 4.2}, {"description": "A red crayon. This is not lipstick. Girls, be careful.", "name": "red crayon", "size": 4.2}], []], [[], [], [], [], [], []]], "dimensions": [6, 6], "location": [3, 3], "goal": 12, "time": 3600, "katamari": 10, "number": 0, "name": "test_level"}
+{
+  "dimensions": [
+    6, 
+    6
+  ], 
+  "goal": 12, 
+  "grid": [
+    [
+      [], 
+      [], 
+      [], 
+      [], 
+      [], 
+      []
+    ], 
+    [
+      [], 
+      [
+        {
+          "description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", 
+          "name": "hairpin", 
+          "size": 4.5
+        }
+      ], 
+      [
+        {
+          "description": "People believe this will bring them good luck.", 
+          "name": "5yen coin", 
+          "size": 2.8
+        }, 
+        {
+          "description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", 
+          "name": "hairpin", 
+          "size": 4.5
+        }
+      ], 
+      [
+        {
+          "description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", 
+          "name": "hairpin", 
+          "size": 4.5
+        }
+      ], 
+      [], 
+      []
+    ], 
+    [
+      [
+        {
+          "description": "People believe this will bring them good luck.", 
+          "name": "5yen coin", 
+          "size": 2.8
+        }
+      ], 
+      [
+        {
+          "description": "People believe this will bring them good luck.", 
+          "name": "5yen coin", 
+          "size": 2.8
+        }
+      ], 
+      [
+        {
+          "description": "You don't need to be a monkey to eat this.", 
+          "name": "banana", 
+          "size": 10.0
+        }, 
+        {
+          "description": "People believe this will bring them good luck.", 
+          "name": "5yen coin", 
+          "size": 2.8
+        }
+      ], 
+      [], 
+      [], 
+      []
+    ], 
+    [
+      [], 
+      [], 
+      [], 
+      [
+        {
+          "description": "Some people are so skilful that they can build a small house with this.", 
+          "name": "match", 
+          "size": 1.6
+        }, 
+        {
+          "description": "Some people are so skilful that they can build a small house with this.", 
+          "name": "match", 
+          "size": 1.6
+        }, 
+        {
+          "description": "Some people are so skilful that they can build a small house with this.", 
+          "name": "match", 
+          "size": 1.6
+        }, 
+        {
+          "description": "These usually disappear very quickly when playing Pachinko...", 
+          "name": "pachinko ball", 
+          "size": 4.7
+        }, 
+        {
+          "description": "These usually disappear very quickly when playing Pachinko...", 
+          "name": "pachinko ball", 
+          "size": 4.7
+        }, 
+        {
+          "description": "These usually disappear very quickly when playing Pachinko...", 
+          "name": "pachinko ball", 
+          "size": 4.7
+        }, 
+        {
+          "description": "Rub and erase. But it makes a mess.", 
+          "name": "eraser", 
+          "size": 8.0
+        }
+      ], 
+      [
+        {
+          "description": "A white crayon. Using this on white paper is pointless", 
+          "name": "white crayon", 
+          "size": 5.9
+        }
+      ], 
+      []
+    ], 
+    [
+      [], 
+      [], 
+      [], 
+      [
+        {
+          "description": "A red crayon. This is not lipstick. Girls, be careful.", 
+          "name": "red crayon", 
+          "size": 4.2
+        }
+      ], 
+      [
+        {
+          "description": "A red crayon. This is not lipstick. Girls, be careful.", 
+          "name": "red crayon", 
+          "size": 4.2
+        }, 
+        {
+          "description": "A red crayon. This is not lipstick. Girls, be careful.", 
+          "name": "red crayon", 
+          "size": 4.2
+        }
+      ], 
+      []
+    ], 
+    [
+      [], 
+      [], 
+      [], 
+      [], 
+      [], 
+      []
+    ]
+  ], 
+  "items": [
+    [
+      {
+        "description": "You don't need to be a monkey to eat this.", 
+        "name": "banana", 
+        "size": 10.0
+      }, 
+      [
+        2, 
+        2
+      ]
+    ], 
+    [
+      {
+        "description": "Some people are so skilful that they can build a small house with this.", 
+        "name": "match", 
+        "size": 1.6
+      }, 
+      [
+        3, 
+        3
+      ]
+    ], 
+    [
+      {
+        "description": "Some people are so skilful that they can build a small house with this.", 
+        "name": "match", 
+        "size": 1.6
+      }, 
+      [
+        3, 
+        3
+      ]
+    ], 
+    [
+      {
+        "description": "Some people are so skilful that they can build a small house with this.", 
+        "name": "match", 
+        "size": 1.6
+      }, 
+      [
+        3, 
+        3
+      ]
+    ], 
+    [
+      {
+        "description": "People believe this will bring them good luck.", 
+        "name": "5yen coin", 
+        "size": 2.8
+      }, 
+      [
+        2, 
+        2
+      ]
+    ], 
+    [
+      {
+        "description": "People believe this will bring them good luck.", 
+        "name": "5yen coin", 
+        "size": 2.8
+      }, 
+      [
+        2, 
+        1
+      ]
+    ], 
+    [
+      {
+        "description": "People believe this will bring them good luck.", 
+        "name": "5yen coin", 
+        "size": 2.8
+      }, 
+      [
+        2, 
+        0
+      ]
+    ], 
+    [
+      {
+        "description": "People believe this will bring them good luck.", 
+        "name": "5yen coin", 
+        "size": 2.8
+      }, 
+      [
+        1, 
+        2
+      ]
+    ], 
+    [
+      {
+        "description": "A white crayon. Using this on white paper is pointless", 
+        "name": "white crayon", 
+        "size": 5.9
+      }, 
+      [
+        3, 
+        4
+      ]
+    ], 
+    [
+      {
+        "description": "A red crayon. This is not lipstick. Girls, be careful.", 
+        "name": "red crayon", 
+        "size": 4.2
+      }, 
+      [
+        4, 
+        4
+      ]
+    ], 
+    [
+      {
+        "description": "A red crayon. This is not lipstick. Girls, be careful.", 
+        "name": "red crayon", 
+        "size": 4.2
+      }, 
+      [
+        4, 
+        4
+      ]
+    ], 
+    [
+      {
+        "description": "A red crayon. This is not lipstick. Girls, be careful.", 
+        "name": "red crayon", 
+        "size": 4.2
+      }, 
+      [
+        4, 
+        3
+      ]
+    ], 
+    [
+      {
+        "description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", 
+        "name": "hairpin", 
+        "size": 4.5
+      }, 
+      [
+        1, 
+        1
+      ]
+    ], 
+    [
+      {
+        "description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", 
+        "name": "hairpin", 
+        "size": 4.5
+      }, 
+      [
+        1, 
+        2
+      ]
+    ], 
+    [
+      {
+        "description": "Used to fix hairstyles. Also the name for a sharp curve, but you can't put that on your head.", 
+        "name": "hairpin", 
+        "size": 4.5
+      }, 
+      [
+        1, 
+        3
+      ]
+    ], 
+    [
+      {
+        "description": "These usually disappear very quickly when playing Pachinko...", 
+        "name": "pachinko ball", 
+        "size": 4.7
+      }, 
+      [
+        3, 
+        3
+      ]
+    ], 
+    [
+      {
+        "description": "These usually disappear very quickly when playing Pachinko...", 
+        "name": "pachinko ball", 
+        "size": 4.7
+      }, 
+      [
+        3, 
+        3
+      ]
+    ], 
+    [
+      {
+        "description": "These usually disappear very quickly when playing Pachinko...", 
+        "name": "pachinko ball", 
+        "size": 4.7
+      }, 
+      [
+        3, 
+        3
+      ]
+    ], 
+    [
+      {
+        "description": "Rub and erase. But it makes a mess.", 
+        "name": "eraser", 
+        "size": 8.0
+      }, 
+      [
+        3, 
+        3
+      ]
+    ]
+  ], 
+  "katamari": 10, 
+  "location": [
+    3, 
+    3
+  ], 
+  "name": "test_level", 
+  "number": 0, 
+  "status": "unbeaten", 
+  "time": 3600
+}
