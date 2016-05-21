@@ -16,6 +16,7 @@ def play_level(level, data):
                "east": east,
                "west": west,
                "look": look,
+               "time left": time,
                "roll up": roll,
                "quit": quit}
     alt_actions = {"n": north,
@@ -23,6 +24,11 @@ def play_level(level, data):
                    "e": east,
                    "w": west,
                    "roll": roll,
+                   "pick": roll,
+                   "pick up": roll,
+                   "time": time,
+                   "t": time,
+                   "q": quit,
                    "r": roll,
                    "l": look,
                    "examine": look}
@@ -39,7 +45,7 @@ def play_level(level, data):
             printer.prompt(actions.keys())
 
 def quit(data):
-    check_win(data)
+    announce_win(data)
     print "exiting level"
     printer.royal_rainbow()
     data["playing_level"] = False
@@ -54,15 +60,23 @@ def tick_time(data):
         printer.times_up()
         quit(data)
 
-def check_win(data):
+def announce_win(data):
     size = recalc_katamari(data)
     printer.final_size(size)
-    if size > data["level"]["goal"]:
+    if check_win(data):
         printer.win()
         if data["progress"] == data["level"]["number"]:
             data["progress"] += 1
     else:
         printer.failure()
+
+def check_win(data):
+    size = recalc_katamari(data)
+    if size > data["level"]["goal"]:
+        return True
+    else:
+        return False
+
 
 def move_to(place, data):
     katamari = data["katamari"]
@@ -72,6 +86,14 @@ def move_to(place, data):
         tick_time(data)
     else:
         print "Ahh but you can't move there! Sorry, that's not in bounds"
+
+def time(data):
+    time_left = data["level"]["time"]
+    goal = data["level"]["goal"]
+    if check_win(data):
+        print "You're over your goal of {0}cm, phew! But you still have {1}m{2}s to make your Katamari as big as possible! Get to it!".format(goal, time_left/60, time_left%60)
+    else:
+        print "You have {0}m{1}s left to get your katamari up to {2}cm, better hurry!".format(time_left/60, time_left%60, goal)
 
 def roll(data):
     place = data["level"]["location"]
