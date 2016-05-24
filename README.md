@@ -3,6 +3,7 @@ A text adventure de-make of Katamari Damacy inspired by [this post](http://katam
 
 # Play!
 To play simply clone the directory and run `python main.py`
+Now with tab completion! (thanks @rolandshoemaker)
 
 # Contribute!
 There are a bunch of issues open - feel free to submit PRs
