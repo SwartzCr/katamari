@@ -34,6 +34,7 @@ def play_level(level, data):
                    "examine": look}
     printer.welcome_level(level)
     while data["playing_level"]:
+        data["completer"].set_actions(actions.keys())
         inp = input("> ").lower().strip()
         if inp in actions.keys():
             actions[inp](data)
@@ -99,6 +100,7 @@ def roll(data):
     place = data["level"]["location"]
     items = data["level"]["grid"][place[1]][place[0]]
     item_names = [item["name"].lower() for item in items]
+    data["completer"].set_actions(item_names)
     to_roll = input("Roll what? ").lower().strip()
     targets = [item for item in items if item["name"].lower() == to_roll]
     if len(targets) > 0:
@@ -183,6 +185,7 @@ def look(data):
                    "h": (0, 0)}
     katamari = {"katamari" : ""}
     prompt = "N, S, E, W, Here, or Katamari"
+    data["completer"].set_actions(options.keys())
     inp = input("look which direction? ({0}) ".format(prompt)).lower().strip()
     if inp in options.keys():
         look_at(options[inp], data)
