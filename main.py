@@ -39,7 +39,7 @@ def try_level(data):
     levels = [level for level in data["levels"] if level["number"] <= data["progress"]]
     names = [level["name"] for level in levels]
     print("available levels are: {0}".format(", ".join(names)))
-    inp = input("which level would you like to play? ").lower()
+    inp = input("which level would you like to play? ").lower().strip()
     if inp in names:
         level = [level for level in levels if level["name"] == inp][0]
         data["level"] = load_level(inp)
@@ -71,7 +71,7 @@ def main():
     print("Time to start playing, what would you like to do? Valid commands are {0}".format(", ".join(actions.keys())))
     while data["playing"]:
         try:
-            inp = input("> ").lower()
+            inp = input("> ").lower().strip()
             if inp in actions.keys():
                 actions[inp](data)
                 continue
