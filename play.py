@@ -110,6 +110,8 @@ def roll(data):
             data["katamari"]["items"].append(item)
             printer.pickup(item["name"])
             printer.status(recalc_katamari(data))
+        elif item["size"] <= recalc_katamari(data) / 1.9:
+            printer.bump(item["name"])
         else:
             printer.fail(item["name"])
             smash_katamari(data)

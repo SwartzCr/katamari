@@ -1,5 +1,6 @@
 from __future__ import print_function
 import os
+import random
 
 class PColors:
     """Define some colors up in this piece."""
@@ -58,6 +59,11 @@ def move(direction):
 
 def status(size):
     print("Your katamari is {0}cm".format(str(size)))
+
+def bump(item):
+    status=["bumps and","rubs and","wiggles then","stalls then"]
+    verb = status[random.randrange(len(status))]
+    print("Your katamari {0} rolls back from the {1} before slowing".format(verb, item))
 
 def lose(item):
     print("Oh No! A {0} flies off of your katamari!".format(item))
