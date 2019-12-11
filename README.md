@@ -1,6 +1,8 @@
 # Katamari Adventure
 A text adventure de-make of Katamari Damacy inspired by [this post](http://katamari-damacy.livejournal.com/262676.html)
 
+[![Run on Repl.it](https://repl.it/badge/github/SwartzCr/katamari)](https://repl.it/github/SwartzCr/katamari)
+
 # Play!
 To play simply clone the directory and run `python main.py`  
 Now with tab completion! (thanks @rolandshoemaker)
